@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <title>Search Engine</title>
+  <title>Search</title>
   <style>
     * {
       margin: 0;
@@ -14,7 +13,6 @@
       box-sizing: border-box;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
-
     body {
       height: 100vh;
       background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470") no-repeat center center/cover;
@@ -22,56 +20,48 @@
       transition: background-image 1s ease-in-out;
     }
 
-    /* Top Bar */
     header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 14px 24px;
- 
-}
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 14px 24px;
+    }
 
-/* CENTER MENU */
-.left-menu {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 40px;
-}
+    .left-menu {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 40px;
+    }
+    .left-menu a {
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
 
-.left-menu a {
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  font-size: 19px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-/* RIGHT MENU */
-.right-menu {
-  margin-left: auto;
-  display: flex;
-  gap: 18px;
-}
-/* SIGN IN – same font */
-.right-menu a {
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
+    .right-menu {
+      margin-left: auto;
+      display: flex;
+      gap: 18px;
+    }
 
+    .right-menu a {
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
 
     header a {
       color: #fff;
       text-decoration: none;
-      
     }
-
     header a:hover {
       text-decoration: underline;
     }
 
-    /* Center Content */
     .center {
       height: calc(100vh - 60px);
       display: flex;
@@ -81,197 +71,114 @@
     }
 
     .logo {
-      font-size: 64px;
-      font-weight: 600;
-      margin-bottom: 30px;
-      letter-spacing: -2px;
+      font-size: 88px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      letter-spacing: -4px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+    .logo span {
+      color: #ffffff;
+    }
+    .logo span.accent {
+      color: #4ade80;        /* nice fresh green accent */
     }
 
-    .logo span:nth-child(1) { color: #008373; }
-    .logo span:nth-child(2) { color: #fff; }
-    .logo span:nth-child(3) { color: #008373; }
-    .logo span:nth-child(4) { color: #008373; }
-
-    /* Search Box */
     .search-box {
       width: 600px;
       max-width: 90%;
       background: #fff;
-      border-radius: 30px;
+      border-radius: 999px;
       display: flex;
       align-items: center;
-      padding: 12px 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      margin-top: -40px; /* search box thodi upar move */
+      padding: 14px 24px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.35);
     }
 
     .search-box input {
       flex: 1;
       border: none;
       outline: none;
-      font-size: 16px;
-      color: #333;
+      font-size: 17px;
+      color: #111;
     }
 
     .search-box button {
       background: none;
       border: none;
       cursor: pointer;
-      font-size: 18px;
+      font-size: 22px;
+      color: #555;
     }
 
-    /* Footer */
     footer {
       position: absolute;
       bottom: 0;
       width: 100%;
-      padding: 10px 24px;
-      background: rgba(0, 0, 0, 0.35);
+      padding: 12px 24px;
+      background: rgba(0, 0, 0, 0.4);
       display: flex;
       justify-content: space-between;
-      font-size: 12px;
+      font-size: 13px;
     }
 
     footer a {
-      color: #fff;
+      color: #eee;
       text-decoration: none;
-      margin-right: 14px;
+      margin-right: 16px;
     }
-
     footer a:hover {
       text-decoration: underline;
     }
 
     .user-icon i {
-  font-size: 24px;
-  color: #fff;
-  cursor: pointer;
-}
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .user-icon:hover i {
+      opacity: 0.85;
+    }
 
-.user-icon:hover i {
-  opacity: 0.8;
-}
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 992px) {
+      .left-menu { gap: 28px; }
+      .left-menu a { font-size: 17px; }
+      .search-box { width: 90%; }
+    }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+    @media (max-width: 768px) {
+      header { padding: 12px 16px; }
+      .left-menu {
+        position: relative;
+        left: 0;
+        transform: none;
+        justify-content: center;
+        width: 100%;
+        margin-top: 8px;
+        gap: 20px;
+      }
+      .right-menu {
+        position: absolute;
+        right: 16px;
+        top: 14px;
+      }
+      .center {
+        justify-content: flex-start;
+        padding-top: 120px;
+      }
+      .logo { font-size: 64px; margin-bottom: 30px; }
+    }
 
-/* Tablet & small laptops */
-@media (max-width: 992px) {
-
-  .left-menu {
-    gap: 28px;
-  }
-
-  .left-menu a {
-    font-size: 17px;
-  }
-
-  .user-icon i {
-    font-size: 22px;
-  }
-
-  .search-box {
-    width: 90%;
-  }
-}
-
-/* Mobile devices */
-@media (max-width: 768px) {
-
-  header {
-    padding: 12px 16px;
-  }
-
-  /* Center menu moves slightly down for clarity */
-  .left-menu {
-    position: relative;
-    left: 0;
-    transform: none;
-    justify-content: center;
-    width: 100%;
-    margin-top: 6px;
-    gap: 22px;
-  }
-
-  .left-menu a {
-    font-size: 16px;
-  }
-
-  /* User icon stays top-right */
-  .right-menu {
-    position: absolute;
-    right: 16px;
-    top: 14px;
-  }
-
-  .user-icon i {
-    font-size: 22px;
-  }
-
-  /* Center content */
-  .center {
-    padding: 0 12px;
-  }
-
-  .search-box {
-    margin-top: 0;
-    padding: 10px 16px;
-  }
-
-  .search-box input {
-    font-size: 15px;
-  }
-
-  footer {
-    flex-direction: column;
-    gap: 6px;
-    text-align: center;
-  }
-}
-
-/* Extra small mobile */
-@media (max-width: 480px) {
-
-  .left-menu {
-    flex-wrap: wrap;       
-    row-gap: 10px;
-  }
-
-  .left-menu a {
-    font-size: 15px;
-  }
-
-  .user-icon i {
-    font-size: 20px;
-  }
-
-  .search-box {
-    border-radius: 24px;
-  }
-}
-
-/* MOBILE – search box upar lane ke liye */
-@media (max-width: 768px) {
-  .center {
-    justify-content: flex-start;
-    padding-top: 110px;
-  }
-}
-
-/* EXTRA SMALL MOBILE */
-@media (max-width: 480px) {
-  .center {
-    padding-top: 90px;
-  }
-}
-
-
+    @media (max-width: 480px) {
+      .logo { font-size: 52px; letter-spacing: -3px; }
+      .center { padding-top: 100px; }
+      .search-box { padding: 12px 18px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="left-menu">
       <a href="#">Images</a>
@@ -279,37 +186,33 @@
       <a href="#">Maps</a>
       <a href="#">News</a>
     </div>
-   <div class="right-menu">
-  <a href="#" class="user-icon">
-    <i class="fa-regular fa-user"></i>
-  </a>
-</div>
-
+    <div class="right-menu">
+      <a href="#" class="user-icon">
+        <i class="fa-regular fa-user"></i>
+      </a>
+    </div>
   </header>
 
-  <!-- Center -->
-    <div class="center">
-      <form class="search-box" onsubmit="searchGoogle(event)">
-  <input type="text" id="query" placeholder="Search the web" required />
-  <button type="submit">🔍</button>
-</form>
-
-<div id="results"
-     style="width:80%;max-width:900px;margin-top:30px;">
-</div>
-
+  <div class="center">
+    <div class="logo">
+      S<span class="accent">e</span>a<span class="accent">r</span>ch
     </div>
 
-  <!-- Footer -->
+    <form class="search-box" onsubmit="searchGoogle(event)">
+      <input type="text" id="query" placeholder="Search the web..." required autocomplete="off" />
+      <button type="submit">🔍</button>
+    </form>
+
+    <div id="results" style="width:86%; max-width:920px; margin-top:35px;"></div>
+  </div>
+
   <footer>
     <div>
       <a href="#">Privacy</a>
       <a href="#">Terms</a>
       <a href="#">About</a>
     </div>
-    <div>
-      © 2026 Demo
-    </div>
+    <div>© 2026 Search</div>
   </footer>
 
   <script>
@@ -320,26 +223,22 @@
       "https://images.unsplash.com/photo-1470770841072-f978cf4d019e",
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e"
     ];
-
     let index = 0;
-
     setInterval(() => {
       index = (index + 1) % images.length;
       document.body.style.backgroundImage = `url('${images[index]}')`;
-    }, 5000); // 5 seconds me image change hogi
+    }, 5000);
   </script>
 
   <script>
-function searchGoogle(e) {
-  e.preventDefault();
-
-  const q = document.getElementById("query").value;
-
-  // Redirect to results page with query
-  window.location.href = "results.html?q=" + encodeURIComponent(q);
-}
-</script>
-
+    function searchGoogle(e) {
+      e.preventDefault();
+      const q = document.getElementById("query").value.trim();
+      if (q) {
+        window.location.href = "results.html?q=" + encodeURIComponent(q);
+      }
+    }
+  </script>
 
 </body>
 </html>
